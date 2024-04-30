@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import photo from '../../../../assets/images/foto.jpg';
+// @ts-ignore
 import { FlexWrapper } from "../../../../components/FlexWrapper";
 
 
@@ -13,7 +14,7 @@ type PhotoPropsType ={
 export const Main: React.FC = () => {
     return (
         <StyledMain>
-           <FlexWrapper align={"center"} justify={"space-around"}>
+           <FlexWrapper align={"center"} justify={"space-around"} direction={"row"}>
                 <TextContainer>
                     <Greeting>Hi There</Greeting>
                     <Name>I am Evgeniya Staravoitava</Name>
@@ -67,4 +68,3 @@ const MainTitle = styled.h1`
     color: darkslateblue;  // Example of a color that stands out
     margin-top: 12px;
 `;
-
