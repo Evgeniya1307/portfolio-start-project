@@ -7,7 +7,7 @@ type WorkPropsType ={
     text:string
     src: string;
     alt:string
-    children?: React.ReactNode//явно указываем тип children
+    children?: React.ReactNode// тип children
 }
 
 type ImageProps = {
@@ -16,10 +16,10 @@ type ImageProps = {
 }
 
 
-// Определение типа для пропсов компонента ссылки
+//  тип для пропсов компонента ссылки
 type LinkProps = {
     href: string;
-    children?: React.ReactNode//явно указываем тип children
+    children?: React.ReactNode//тип children
 }
 
 export const Work = (props:WorkPropsType)=>{

@@ -39,7 +39,7 @@ const StyledForm = styled.form`
     display: flex;
     flex-direction:column;
     gap: 10px;
-    margin: 0 auto;//легко выровнять форму
+    margin: 0 auto;//легко выровнять форму центрировать
 `
 
 // пропс placeholder к компоненту input
