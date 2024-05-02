@@ -3,16 +3,21 @@ import styled from "styled-components";
 
 
 
-export const Menu = () => {
+
+
+
+
+export const Menu = (props:{menuItems:Array<string>}) => {
     return (
         <StyledMenu>
             <ul>
-                <li><a href=''>Home</a></li>
-                <li><a href=''>Skills</a></li>
-                <li><a href=''>Works</a></li>
-                <li><a href=''>Testimony</a></li>
-                <li><a href=''>Contact</a></li>
-            </ul>
+
+{props.menuItems.map((item:string,index)=>{
+    return<li key={index}>
+        <a href="">{item}</a>
+    </li>
+})}
+</ul>
         </StyledMenu>
     );
 };
@@ -21,5 +26,16 @@ const StyledMenu = styled.nav`
     ul {
        display: flex;
        gap: 30px;
+       justify-content: center;
     }
 `;
+
+
+
+
+
+
+
+
+//map пробежаться по тому массиву который передадут в пропсах 
+//метод принимает стрел функ в которой каждый эл попадает в переменную он должен вернуть разметку айтома 
