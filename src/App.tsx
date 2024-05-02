@@ -5,6 +5,8 @@ import { Skils } from './components/section/main/skils/Skils';
 import { Works } from './components/works/Works';
 import { Testimony } from './components/section/testimony/Testimony';
 import { Contact } from './components/section/contacts/Contact';
+import { Slogan } from './components/section/slogan/Slogan';
+import { Footer } from './layout/header/footer/Footer';
 
 function App() {
     return (
@@ -15,6 +17,8 @@ function App() {
           <Works/>
           <Testimony/>
           <Contact/>
+          <Slogan/>
+          <Footer/>
         </div>
     );
 }
