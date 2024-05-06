@@ -3,9 +3,9 @@
 export const thema = {
 
     colors: {
-primaryBg: '#1FF1F20',
-secondaryBg: '#252527',
-accent: '#757205',
+primaryBg: '#578949',
+secondaryBg: '#578949',
+accent: '#007bff',
 
 
 font:  '#FFFFFF'

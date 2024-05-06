@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
-import { FlexWrapper } from "../../../components/FlexWrapper";
+import { FlexWrapper } from "../../components/FlexWrapper";
 
 
 
@@ -39,7 +39,7 @@ export const Footer =() => {
 
 // компоненты, используемые внутри Footer 
 const StyledFooter = styled.footer`
-background-color:#eb9b62;
+background-color:#234320;
 min-height: 30vh;
 `
 const Name = styled.span``;

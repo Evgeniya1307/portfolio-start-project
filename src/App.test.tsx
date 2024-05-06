@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
-import { Main } from './layout/header/section/main/Main';
+import { Main } from './components/section/main/Main';
 import { FlexWrapper } from './components/FlexWrapper';
 
 

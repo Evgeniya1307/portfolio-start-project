@@ -29,7 +29,7 @@ export const Main: React.FC = () => {
 // Styling for the main container
 const StyledMain = styled.div`
     min-height: 100vh;
-    background-color: aqua;
+    background-color: #860949;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,6 +65,6 @@ const Name = styled.h2`
 const MainTitle = styled.h1`
     font-size: 2.5rem;
     font-weight: bold;
-    color: darkslateblue;  // Example of a color that stands out
+    color: #e3e1ee;  // Example of a color that stands out
     margin-top: 12px;
 `;

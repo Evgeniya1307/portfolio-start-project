@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "../../layout/header/icon/Icon";
+import { Icon } from "../../layout/icon/Icon"
 
 export const Logo = () => {
     return (

@@ -15,3 +15,6 @@ export const Button = styled.button<ButtonProps>`
     border: none;
 
 `
+
+//007bff but 
+//tekst d622b5

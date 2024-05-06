@@ -6,7 +6,8 @@ import { Works } from './components/works/Works';
 import { Testimony } from './components/section/testimony/Testimony';
 import { Contact } from './components/section/contacts/Contact';
 import { Slogan } from './components/section/slogan/Slogan';
-import { Footer } from './layout/header/footer/Footer';
+import { Footer } from './layout/footer/Footer';
+
 
 function App() {
     return (
@@ -18,7 +19,7 @@ function App() {
           <Testimony/>
           <Contact/>
           <Slogan/>
-          <Footer/>
+         <Footer/>
         </div>
     );
 }

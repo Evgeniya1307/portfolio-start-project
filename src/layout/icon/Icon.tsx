@@ -1,5 +1,5 @@
 import React from "react";
-import iconsSpriter from'../../../assets/images/icons-spriter.svg'
+import iconsSpriter from'../../assets/images/icons-spriter.svg'
 
 
 type IconPropsType={

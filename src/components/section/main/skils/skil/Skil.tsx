@@ -1,7 +1,7 @@
 import { constants } from "perf_hooks";
 import React from "react";
 import styled from "styled-components";
-import { Icon } from "../../../../../layout/header/icon/Icon";
+import { Icon } from "../../../../../layout/icon/Icon";
 
 
 type SkilPropsType = {

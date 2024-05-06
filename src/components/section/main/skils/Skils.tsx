@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../FlexWrapper";
-import { Icon } from "../../../../layout/header/icon/Icon";
+import { Icon } from "../../../../layout/icon/Icon";
 import { SectionTitle } from "../../../SectionTitle";
 import { Skil } from "./skil/Skil";
 

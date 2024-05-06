@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../../SectionTitle";
-import { Icon } from "../../../layout/header/icon/Icon";
+import { Icon } from "../../../layout/icon/Icon";
 import { Slider } from "../../slider/Slider";
 import { FlexWrapper } from "../../FlexWrapper";
 

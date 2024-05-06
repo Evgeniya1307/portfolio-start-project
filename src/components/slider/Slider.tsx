@@ -11,7 +11,7 @@ export const Slider = () =>{
     <FlexWrapper>
     <Slade>
 <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
-<Name>@ivan ivanow</Name>
+<Name>@evgeniya staravoitava</Name>
     </Slade>
     </FlexWrapper>  
     <Pagination>
@@ -52,7 +52,7 @@ const Pagination = styled.div`
         width: 10px;
         height: 20px;
         margin: 5px;
-        background-color: #ad363666;
+        background-color: #b5212166;
     }
 `
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../SectionTitle";
-import { Menu } from "../logo/menu/Menu";
+import { HeaderMenu } from "../../components/menu/Menu";
 import { FlexWrapper } from "../FlexWrapper";
 import { Work } from "./work/Work";
 import socialImg from '../../assets/images/proj-1.png'
@@ -15,7 +15,7 @@ export const Works = ()=>{
     return(
 <StyledWork>
 <SectionTitle>My Works</SectionTitle>
-<Menu menuItems={WorksItems}/>
+<HeaderMenu menuItems={WorksItems}/>
 <FlexWrapper justify={'space-around'}>
 <Work  title={'Social Network'}
 src={socialImg}
@@ -38,5 +38,5 @@ text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 
 
 const StyledWork = styled.section`
     min-height: 100vh;
-    background-color:#a9c0cf
+    background-color:#0d129e
 `
