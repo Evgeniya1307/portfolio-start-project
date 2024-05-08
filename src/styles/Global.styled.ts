@@ -45,6 +45,11 @@ a {
     border: none;
   }
 
+//для всех секций
+section{
+  padding: 100px 0;
+}
+
   /* Styles for odd sections */
   section:nth-of-type(odd) {
     background-color: ${thema.colors.primaryBg};

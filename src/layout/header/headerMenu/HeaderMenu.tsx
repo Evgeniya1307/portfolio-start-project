@@ -20,14 +20,8 @@ export const HeaderMenu = (props: { menuItems: Array<string> }) => {
         {props.menuItems.map((item: string, index:number) => {
           return  <ListItem key={index}>
               <Link href="">
-                {item}
-                <Mask>
-                  <span>{item}</span>
-                </Mask>
-                <Mask>
-                  <span>{item}</span>
-                </Mask>
-              </Link>
+              <span>{item}</span>
+               </Link>
             </ListItem>
         })}
       </ul>
@@ -50,59 +44,15 @@ const Link = styled.a<LinkProps>`
   font-weight: 400;
   font-size: 30px;
   text-align: center;
-  color: transparent;
+  color: #4eb10c;
 `
 
-const Mask = styled.span`
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: inline-block;
-  height: 50%;
-  overflow-y: hidden;
-  //outline: 1px solid red;
-  color: #00ff95;
 
-  //cсылка на род эл
-  & + & {
-    top: 50px;
-    span {//поднять еще 1 спан
-      display: inline-block;
-      transform: translateY(-50%);
-    }
-  }
-`
 
 const ListItem = styled.li<ListItemProps>`
   position: relative;
 
-  &::before {
-    content: '';
-    display: inline-block;
-    height: 3px;
-    background-color: ${thema.colors.accent};
-    
-    position: absolute;
-    top:     50%;
-    left:   -10px;
-    right:  -10px;
-    z-index: 1;
-    transform: scale(0);
-  }
-
-  &:hover {
-     &::before {
-      transform: scale(1);
-    } 
-  ${Mask} {
-      transform: skewX(12deg) translateX(5px);
-      color: ${thema.colors.font};
-      
-      & + ${Mask} {
-        transform: skewX(12deg) translateX(-5px);
-      }
-    }
-  }
+  
 `
 
 
@@ -110,3 +60,33 @@ const ListItem = styled.li<ListItemProps>`
 
 //map пробежаться по тому массиву который передадут в пропсах 
 //метод принимает стрел функ в которой каждый эл попадает в переменную он должен вернуть разметку айтома 
+
+
+
+  {/* <Mask>
+                  <span>{item}</span>
+                </Mask>
+                <Mask>
+                  <span>{item}</span>
+                </Mask> */}
+
+
+// const Mask = styled.span`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   display: inline-block;
+//   height: 50%;
+//   overflow-y: hidden;
+//   //outline: 1px solid red;
+//   color: #00ff95;
+
+//   //cсылка на род эл
+//   & + & {
+//     top: 50px;
+//     span {//поднять еще 1 спан
+//       display: inline-block;
+//       transform: translateY(-50%);
+//     }
+//   }
+// `

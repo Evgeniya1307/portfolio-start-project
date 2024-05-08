@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../../../FlexWrapper";
-import { Icon } from "../../../../layout/icon/Icon";
 import { SectionTitle } from "../../../SectionTitle";
 import { Skil } from "./skil/Skil";
+import { Container } from "../../../Container";
 
 
 
@@ -11,6 +11,7 @@ import { Skil } from "./skil/Skil";
 export const Skils =()=>{
     return(
 <StyledSkils>
+<Container>
 <SectionTitle>My Skills</SectionTitle>
 <FlexWrapper wrap={'wrap'} justify={'space-between'}>
 
@@ -31,11 +32,8 @@ description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do e
    
    <Skil iconId={'web'}title={'WEB DESIGN  '}
 description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/>
-   
-   
-   
-   
     </FlexWrapper>
+</Container>
     </StyledSkils>
 
     )
@@ -43,6 +41,5 @@ description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do e
 
 
 const StyledSkils=styled.section`
-   background-color:#3c4c36;
    min-height: 100vh;
 `
