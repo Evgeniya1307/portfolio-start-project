@@ -3,6 +3,7 @@ import styled from "styled-components";
 import photo from '../../../assets/images/foto.jpg';
 // @ts-ignore
 import { FlexWrapper } from "../../FlexWrapper";
+import { Container } from "../../Container";
 
 
 type PhotoPropsType ={
@@ -14,14 +15,17 @@ type PhotoPropsType ={
 export const Main: React.FC = () => {
     return (
         <StyledMain>
-           <FlexWrapper align={"center"} justify={"space-around"} direction={"row"}>
-                <TextContainer>
-                    <Greeting>Hi There</Greeting>
+            <Container>
+            <FlexWrapper align={"center"} justify={"space-between"}>
+                    <div>
+                    <SmallText>Hi There</SmallText>
                     <Name>I am Evgeniya Staravoitava</Name>
                     <MainTitle>A Web Developer</MainTitle>
-                </TextContainer>
+                    </div>
                 <Photo src={photo} alt="Evgeniya Staravoitava" />
             </FlexWrapper>
+            </Container>
+           
         </StyledMain>
     );
 }
@@ -45,16 +49,13 @@ const Photo= styled.img<PhotoPropsType>`
     box-shadow: 0 4px 8px rgba(246, 244, 244, 0.1);  // Added shadow for depth
 `;
 
-// Additional styled components
-const TextContainer = styled.div`
-    text-align: left;
+const MainTitle = styled.h1`
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #e4e2ee;  // Example of a color that stands out
+    margin-top: 12px;
 `;
 
-const Greeting = styled.span`
-    display: block;
-    font-size: 1.2rem;
-    color: #f9f3f3;
-`;
 
 const Name = styled.h2`
     margin-top: 8px;
@@ -62,9 +63,7 @@ const Name = styled.h2`
     color: #f1ecec;
 `;
 
-const MainTitle = styled.h1`
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #e4e2ee;  // Example of a color that stands out
-    margin-top: 12px;
-`;
+const SmallText = styled.h2`
+    
+    
+`

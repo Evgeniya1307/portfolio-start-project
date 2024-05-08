@@ -3,9 +3,11 @@ import styled from "styled-components";
 import photo from '../../../../assets/images/foto.jpg';
 // @ts-ignore
 import { FlexWrapper } from "../../../../components/FlexWrapper";
+import { Container } from "../../../components/Container";
+import { thema } from "../../../styles/Thema";
 
 
-type PhotoPropsType ={
+type PhotoPropsType = {
     src: string;
     alt: string;
 }
@@ -14,57 +16,84 @@ type PhotoPropsType ={
 export const Main: React.FC = () => {
     return (
         <StyledMain>
-           <FlexWrapper align={"center"} justify={"space-around"} direction={"row"}>
-                <TextContainer>
-                    <Greeting>Hi There</Greeting>
-                    <Name>I am Evgeniya Staravoitava</Name>
-                    <MainTitle>A Web Developer</MainTitle>
-                </TextContainer>
-                <Photo src={photo} alt="Evgeniya Staravoitava" />
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper align={"center"} justify={"space-between"}>
+                    <div>
+                        <SmallText>Hi There</SmallText>
+                        <Name>I am <span>Evgeniya Staravoitava</span></Name>
+                        <MainTitle>A Web Developer</MainTitle>
+                    </div>
+
+                    <PhotoWrapper>
+                    <Photo src={photo} alt="Evgeniya Staravoitava" />
+                    </PhotoWrapper>   
+                </FlexWrapper>
+            </Container>
         </StyledMain>
     );
 }
 
 // Styling for the main container
-const StyledMain = styled.div`
+const StyledMain = styled.section`
     min-height: 100vh;
-    background-color: #860949;
+    background-color: #fff5e7;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
 `;
 
+
+const PhotoWrapper = styled.div`
+    position: relative;
+    z-index: 0;
+
+    &::before {
+        content:'';
+        width: 360px;
+        height: 470px;
+        border: 5px solid ${thema.colors.accent} ;
+    
+    position: absolute;
+    top: -24px;
+    left: 24px;
+    z-index: -1;//за элемент положить
+    }
+`
+
 // Styling for the Photo component
-const Photo= styled.img<PhotoPropsType>`
+const Photo = styled.img<PhotoPropsType>`
     width: 350px;
     height: 430px;
     object-fit: cover;
-    border-radius: 8px;  // Added border-radius for rounded corners
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Added shadow for depth
-`;
-
-// Additional styled components
-const TextContainer = styled.div`
-    text-align: left;
-`;
-
-const Greeting = styled.span`
-    display: block;
-    font-size: 1.2rem;
-    color: #333;
+`
+const MainTitle = styled.h1`
+    font-weight:400;
+    font-size:27px;
 `;
 
 const Name = styled.h2`
-    margin-top: 8px;
-    font-size: 2rem;
-    color: #222;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 10px 0;
+
+span{
+position: relative;//'эл которого относительно позиционирую
+z-index: 0;   
+&::before {
+        content: '';
+    display: inline-block;
+    width:100%;
+    height: 20px;
+    background-color:${thema.colors.accent};
+    
+    position: absolute;//эл который позиционирую
+    bottom: 0;//прижала к низу
+    z-index: -1;//за родителя эл
+}
+}
 `;
 
-const MainTitle = styled.h1`
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #e3e1ee;  // Example of a color that stands out
-    margin-top: 12px;
-`;
+const SmallText = styled.h2`
+    font-weight:400;
+    font-size: 14px;
+`

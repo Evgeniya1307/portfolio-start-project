@@ -52,5 +52,3 @@ const SocialItem = styled.li`
 `
 const SocialLink = styled.a``;
 const Copyright = styled.small``;
-
-

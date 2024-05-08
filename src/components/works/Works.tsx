@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { SectionTitle } from "../SectionTitle";
-import { HeaderMenu } from "../../components/menu/Menu";
+import { HeaderMenu } from "../../layout/header/headerMenu/HeaderMenu";
 import { FlexWrapper } from "../FlexWrapper";
 import { Work } from "./work/Work";
 import socialImg from '../../assets/images/proj-1.png'

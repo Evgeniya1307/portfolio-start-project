@@ -2,13 +2,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Logo } from '../../components/logo/logo';
-import { HeaderMenu } from '../../components/menu/Menu';
+import { HeaderMenu } from './headerMenu/HeaderMenu';
 import { Container } from '../../components/Container';
 import { FlexWrapper } from '../../components/FlexWrapper';
 
 
 //для массива который передаю пропсами для menu
-const Items = ['Home','Skills','Works','Testimony','Contact']
+const Items = ['Homе','Skills','Works','Testimony','Contact']
 
 export const Header = () => {
     return(
@@ -31,6 +31,6 @@ const StyledHeader=styled.header`
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;//находился поверх всех эл
+    z-index: 99999;//находился поверх всех эл
 
 `
