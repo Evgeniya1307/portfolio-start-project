@@ -2,10 +2,16 @@
 
 export const thema = {
     colors: {
-      primaryBg: '#578949',
-      secondaryBg: '#39414A', // Новый цвет для второго фона
-      accent: '#007bff',
-      font: '#e6efe1'
+      primaryBg: '#1F1F20',
+      secondaryBg: '#252527', // Новый цвет для второго фона
+      accent: '#757205',
+      font: '#478968',
+
+      borderColor: '#4A4A4A',
+
+      placeholderColor: '#495057'
+
+      
     }
   };
   
