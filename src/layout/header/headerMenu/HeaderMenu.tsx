@@ -44,7 +44,7 @@ const Link = styled.a<LinkProps>`
   font-weight: 400;
   font-size: 30px;
   text-align: center;
-  color: #4eb10c;
+  color: ${thema.colors.font}
 `
 
 

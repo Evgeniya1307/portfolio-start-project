@@ -5,7 +5,7 @@ export const thema = {
       primaryBg: '#578949',
       secondaryBg: '#39414A', // Новый цвет для второго фона
       accent: '#007bff',
-      font: '#FFFFFF'
+      font: '#e6efe1'
     }
   };
   

@@ -26,6 +26,7 @@ export const GlobalStyled = createGlobalStyle`
 /* Remove underline for links */
 a {
     text-decoration: none;
+    color: ${thema.colors.font}
   }
 
 
@@ -43,6 +44,8 @@ a {
   button {
     background-color: unset;
     border: none;
+    cursor: pointer;
+    color: ${thema.colors.font};
   }
 
 //для всех секций
@@ -59,4 +62,18 @@ section{
   section:nth-of-type(even) {
     background-color: ${thema.colors.secondaryBg};
   }
+
+h3{
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 700;
+font-size: 16px;
+letter-spacing: 1px;
+}
+
+p{
+font-weight: 400;
+font-size: 14px;
+line-height: 1.4;
+}
+
 `;
