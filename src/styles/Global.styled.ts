@@ -26,7 +26,8 @@ export const GlobalStyled = createGlobalStyle`
 /* Remove underline for links */
 a {
     text-decoration: none;
-    color: ${thema.colors.font}
+    color: ${thema.colors.font};
+    cursor: pointer;
   }
 
 
