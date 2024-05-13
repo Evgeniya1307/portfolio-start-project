@@ -5,6 +5,7 @@ import { Logo } from '../../components/logo/logo';
 import { HeaderMenu } from './headerMenu/HeaderMenu';
 import { Container } from '../../components/Container';
 import { FlexWrapper } from '../../components/FlexWrapper';
+import { MobileMenu } from './mobileMenu/MobileMenu';
 
 
 //для массива который передаю пропсами для menu
@@ -17,6 +18,7 @@ export const Header = () => {
                <FlexWrapper justify={'space-between'} align={'center'}>
                <Logo/>
            <HeaderMenu menuItems={Items}/>
+           <MobileMenu menuItems={Items}/>
                 </FlexWrapper>  
            </Container>
         </StyledHeader>
