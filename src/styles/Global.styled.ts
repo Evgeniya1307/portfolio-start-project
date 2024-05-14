@@ -21,6 +21,8 @@ export const GlobalStyled = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${thema.colors.font};
     line-height: 1.2;
+
+    min-width: 360px;
   }
 
 /* Remove underline for links */
@@ -52,6 +54,10 @@ a {
 //для всех секций
 section{
   padding: 100px 0;
+
+  @media ${thema.media.mobile}{
+    padding: 80px 0;
+  }
 }
 
   /* Styles for odd sections */

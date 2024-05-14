@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Icon } from "../../../../../layout/icon/Icon";
 import { FlexWrapper } from "../../../../FlexWrapper";
+import { thema } from "../../../../../styles/Thema";
 
 
 type SkilPropsType = {
@@ -31,7 +32,13 @@ export const Skil = (props:SkilPropsType)=>{
 
 const StyledSkil = styled.div`
     width: 380px;// скилы чтобы шли по 3 вряд когда их 6
+    flex-grow: 1;
     padding: 62px 20px 40px;
+
+
+@media ${thema.media.mobile}{
+    padding: 62px 0 40px;
+}
 `
 
 export const IconWrapper = styled.div`

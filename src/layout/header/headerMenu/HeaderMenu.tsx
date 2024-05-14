@@ -36,10 +36,10 @@ const StyledHeaderMenu = styled.nav`
     justify-content: center;
   }
 
-  @media ${thema.media.tablet} {
+ @media ${thema.media.tablet} {
     //на экранах меньше 768 hedar не показываю
     display: none;
-  }
+  } 
 `
 
 const Link = styled.a<LinkProps>`

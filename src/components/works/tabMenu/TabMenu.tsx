@@ -28,11 +28,15 @@ export const TabMenu = (props: { menuItems: Array<string> }) => {
 };
 
 const StyledTabMenu = styled.nav`
-   margin-bottom: 40px;
+   /* margin-bottom: 40px; */
    ul {
        display: flex;
-       gap: 20px;
-       justify-content: center;
+       /* gap: 20px; */
+       justify-content: space-between; //center
+       max-width: 352px; //max-width: 352px дает эффект резиности отзывчивости
+       width: 100%; 
+       border: 1px solid red;
+       margin: 0 auto 40px;
     }
 `;
 

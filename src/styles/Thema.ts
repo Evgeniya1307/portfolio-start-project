@@ -14,11 +14,11 @@ export const thema = {
     },
 
      //медиазапросы
-
 media: {
-
 tablet: 'screen and (max-width: 768px)',
 mobile: 'screen and (max-width: 576px)',
+desktop: 'screen and (min-width: 1140px)'//по размеру контейнера если больше 1140 то применятся стили
 }
-  };
+  }
+
   

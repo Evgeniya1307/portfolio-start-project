@@ -1,5 +1,5 @@
 import React from "react";
-import styled,{css} from "styled-components";
+import styled, { css, ThemeProps } from "styled-components";
 import { thema } from "../../../styles/Thema";
 
 type ListItemProps = {
@@ -7,9 +7,8 @@ type ListItemProps = {
   children: React.ReactNode;
 };
 
-
 type LinkProps = {
-  href: string; // Добавляем свойство href в тип LinkProps
+  href: string;
   children: React.ReactNode;
 };
 
@@ -28,63 +27,61 @@ type StyledMobileMenuProps = {
   children?: React.ReactNode;
 };
 
-
 export const MobileMenu = (props: { menuItems: Array<string> }) => {
   return (
-    <StyledMobileMenu>
-      {/* создаю меню бургер */}
+    <StyledMobileMenu isOpen={true}>
       <BurgerButton isOpen={true}>
-<span></span>
+        <span></span>
       </BurgerButton>
       <MobileMenuPopup isOpen={true}>
-      <ul>
-        {props.menuItems.map((item: string, index:number) => {
-          return  <ListItem key={index}>
-              <Link href="">
-              <span>{item}</span>
-               </Link>
-            </ListItem>
-        })}
-      </ul>
+        <ul>
+          {props.menuItems.map((item: string, index:number) => {
+            return (
+              <ListItem key={index}>
+                <Link href="">
+                  <span>{item}</span>
+                </Link>
+              </ListItem>
+            );
+          })}
+        </ul>
       </MobileMenuPopup>
-      
     </StyledMobileMenu>
   );
 };
 
-const StyledMobileMenu = styled.div`
-  display: block;
+const StyledMobileMenu = styled.nav<StyledMobileMenuProps>`
+  display: none;
   
-  @media ${thema.media.tablet} {
-    //на экранах меньше 768 hedar не показываю
-    display: none;
+   @media ${thema.media.tablet} {
+    display: block; 
   }
 `
-const MobileMenuPopup = styled.div<MobileMenuPopupProps>`
- //сразу для popup
- position: fixed;
- top:   0;//на все окно браузера  t l r b
- left:  0;
- right: 0;
- bottom:0;
- z-index: 99999;//чтобы popup был над всеми элементами
- background-color: rgba(31, 31, 32, 0.9);
- display: none;//не вижу меню
 
-${props => props.isOpen && css<{isOpen: boolean}>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`}
+const MobileMenuPopup = styled.div<MobileMenuPopupProps>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99999;
+  background-color: rgba(31, 31, 32, 0.9);
+  display: none;
+
+  ${props => props.isOpen && css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `}
  
- ul {
+  ul {
     display: flex;
     gap: 30px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
   }
-`
+`;
 
 const BurgerButton = styled.button<BurgerButtonProps>`
   position: fixed;
@@ -94,7 +91,7 @@ const BurgerButton = styled.button<BurgerButtonProps>`
   height: 200px;
   z-index: 9999999;
 
-  span{
+  span {
     display: block;
     width: 36px;
     height: 2px;
@@ -103,61 +100,54 @@ const BurgerButton = styled.button<BurgerButtonProps>`
     left: 40px;
     bottom: 50px;
 
-    //кнопка в крестик
-    ${props => props.isOpen !== undefined && props.isOpen && css`
-    background-color: rgba(255, 255, 255, 0);
-`}
+    ${props => props.isOpen && css`
+      background-color: rgba(255, 255, 255, 0);
+    `}
 
-    &::before{
-    content: "";
-    display: block;
-    width: 36px;
-    height: 2px;
-    background-color: ${thema.colors.font};
-    position: absolute;
-    transform: translate(-10px);
+    &::before {
+      content: "";
+      display: block;
+      width: 36px;
+      height: 2px;
+      background-color: ${thema.colors.font};
+      position: absolute;
+      transform: translate(-10px);
 
-${props => props.isOpen !== undefined && props.isOpen && css`
-transform: rotate(-45deg) translateY(0);
-`}
-
+      ${props => props.isOpen && css`
+        transform: rotate(-45deg) translateY(0);
+      `}
     }
 
-    &::after{
+    &::after {
       content: "";
-    display: block;
-    width: 24px;
-    height: 2px;
-    background-color: ${thema.colors.font};
-    position: absolute;
-    transform: translateY(10px);//10px от самого span
-    
-    ${props => props.isOpen !== undefined && props.isOpen && css`
-    transform: rotate(45deg) translateY(0);
-    width: 36px;
-`}
-  
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: ${thema.colors.font};
+      position: absolute;
+      transform: translateY(10px);
+
+      ${props => props.isOpen && css`
+        transform: rotate(45deg) translateY(0);
+        width: 36px;
+      `}
+    }
   }
-  }
-`
+`;
 
 const Link = styled.a<LinkProps>`
   position: relative;
-  
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   font-size: 30px;
   text-align: center;
-  color: ${thema.colors.font}
-`
-
-
+  color: ${thema.colors.font};
+`;
 
 const ListItem = styled.li<ListItemProps>`
   position: relative;
+`;
 
-  
-`
 
 
 

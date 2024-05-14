@@ -27,7 +27,7 @@ export const Header = () => {
 
 //при скроле шапка всегда в доступе
 const StyledHeader=styled.header`
-    background: rngba(31,31,32,8,9);
+    background: rgba(31, 31, 32, 0.9);
     padding: 20px 0;
     position: fixed;//scrol in place
     top: 0;
