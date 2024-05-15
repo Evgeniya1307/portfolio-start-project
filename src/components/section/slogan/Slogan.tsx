@@ -7,7 +7,7 @@ import { Container } from "../../Container"
 import { FlexWrapper } from "../../FlexWrapper"
 
 
-export const Slogan=()=>{
+export const Slogan:React.FC =()=>{
     return(
         <StyledSlogan>
             <Container>

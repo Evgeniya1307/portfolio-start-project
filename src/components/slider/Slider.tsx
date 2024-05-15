@@ -1,73 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
-import { thema } from "../../styles/Thema";
+import { S } from "./Slider_Styles";
 
 
 
 
-export const Slider = () =>{
+export const Slider:React.FC = () =>{
     return(
-<StyledSlider>
+<S.Slider>
     <FlexWrapper>
-    <Slade>
-<Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</Text>
-<Name>@alex star</Name>
-    </Slade>
+    <S.Slade>
+<S.Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</S.Text>
+<S.Name>@alex star</S.Name>
+    </S.Slade>
     </FlexWrapper>  
-    <Pagination>
+    <S.Pagination>
         <span></span>
         <span className={'active'}></span>
         <span></span>
-        </Pagination> 
-</StyledSlider>
+        </S.Pagination> 
+</S.Slider>
     )
 }
 
-
-const StyledSlider = styled.div`
-    max-width:500px;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-
-  
-`
-
-const Slade = styled.div`
-    text-align: center;
-`
-
-const Text = styled.p`
-  
-`
-
-const Name = styled.span`
-font-family: 'Josefin Sans', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin: 22px 0 42px;
-  display: inline-block;
-`
-
-const Pagination = styled.div`
-    span{
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 20px;
-    
-    //для всех спан что идут после спана
-    & +span{
-        margin-left: 5px;
-    }
-
-    &.active{//span с классом active
-background-color: ${thema.colors.accent}
-    }
-    }
-`
 

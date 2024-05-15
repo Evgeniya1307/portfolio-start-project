@@ -1,38 +1,37 @@
 
 import React from 'react';
-import styled from 'styled-components';
 import { Logo } from '../../components/logo/logo';
-import { HeaderMenu } from './headerMenu/HeaderMenu';
+import { DesktopMenu} from './headerMenu/desktopMenu/DesktopMenu';
 import { Container } from '../../components/Container';
 import { FlexWrapper } from '../../components/FlexWrapper';
-import { MobileMenu } from './mobileMenu/MobileMenu';
-
+import { MobileMenu } from './headerMenu/mobileMenu/MobileMenu';
+import { S } from './Header_Styles';
 
 //для массива который передаю пропсами для menu
 const Items = ['Homе','Skills','Works','Testimony','Contact']
 
-export const Header = () => {
+export const Header: React.FC = () => {
+   // логикa для адаптива
+   const [width, setWidth] = React.useState(window.innerWidth);
+   const breakpoint = 768;
+   
+//слежу за изменением шириной окна браузера
+React.useEffect(()=>{
+    const handeWindowResize = () => setWidth(window.innerWidth)
+    return () => window.removeEventListener('resize', handeWindowResize);
+}, []);
+
+
     return(
-        <StyledHeader>
+       <S.Header>
             <Container>
                <FlexWrapper justify={'space-between'} align={'center'}>
                <Logo/>
-           <HeaderMenu menuItems={Items}/>
-           <MobileMenu menuItems={Items}/>
+{width < breakpoint ? <MobileMenu menuItems={Items}/>
+                    : <DesktopMenu menuItems={Items}/>}  
                 </FlexWrapper>  
            </Container>
-        </StyledHeader>
+           </S.Header>
     );
 };
 
-//при скроле шапка всегда в доступе
-const StyledHeader=styled.header`
-    background: rgba(31, 31, 32, 0.9);
-    padding: 20px 0;
-    position: fixed;//scrol in place
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;//находился поверх всех эл
-
-`
