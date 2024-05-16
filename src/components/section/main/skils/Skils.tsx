@@ -4,7 +4,6 @@ import { FlexWrapper } from "../../../FlexWrapper";
 import { SectionTitle } from "../../../SectionTitle";
 import { Skil } from "./skil/Skil";
 import { Container } from "../../../Container";
-import styled from "styled-components";
 import { S } from "./Skills_Style";
 
 const skillData = [
@@ -68,20 +67,3 @@ export const Skils =()=>{
 
 
 
-{/* <Skil iconId={'codeSvg'}title={'HTML5'}
-description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/>
-
-<Skil iconId={'css'}title={'CSS3'}
-description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/>
-
-<Skil iconId={'react'}title={'REACT'}
-description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/>
-   
-   <Skil iconId={'styled'}title={'STYLED COMPONENTS'}
-description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/>
-   
-   <Skil iconId={'typescript'}title={'TYPESCRIPT'}
-description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/>
-   
-   <Skil iconId={'web'}title={'WEB DESIGN'}
-description={'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim'}/> */}

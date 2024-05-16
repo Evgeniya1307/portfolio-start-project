@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { Icon } from "../icon/Icon";
 import { FlexWrapper } from "../../components/FlexWrapper";
 import { S } from "./Footer_Styles";

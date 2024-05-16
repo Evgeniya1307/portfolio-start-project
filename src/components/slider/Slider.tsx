@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
 import { S } from "./Slider_Styles";
 

@@ -1,25 +1,30 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "../../Link";
+import { Link } from "../../Link"; // Добавляем LinkProps для корректной типизации Link
 
 type ListItemProps = {
-    key: number;
     children: React.ReactNode;
 };
 
+export type TabsStatusType = 'all' | 'landing' | 'react' | 'spa'
 
-type LinkProps = {
-    href: string; // Добавляем свойство href в тип LinkProps
-    children: React.ReactNode;
+type TabMenuPropsType = {
+    tabsItems: Array<{ status: TabsStatusType, title: string }>
+    changeFiltersStatus: (value: TabsStatusType) => void
+    currentFilterStatus: string
 };
 
-export const TabMenu:React.FC<{ menuItems: Array<string> }> = (props: { menuItems: Array<string> }) => {
+const ListItem: React.FC<ListItemProps> = ({ children }) => {
+    return <StyledListItem>{children}</StyledListItem>;
+};
+
+const TabMenu: React.FC<TabMenuPropsType> = (props) => {
     return (
         <StyledTabMenu>
             <ul>
-                {props.menuItems.map((item: string, index: number) => {
+                {props.tabsItems.map((item, index) => {
                     return <ListItem key={index}>
-                        <Link href="">{item}</Link>
+                        <Link active={props.currentFilterStatus === item.status} as="button" onClick={() => props.changeFiltersStatus(item.status)}>{item.title}</Link>
                     </ListItem>
                 })}
             </ul>
@@ -28,23 +33,19 @@ export const TabMenu:React.FC<{ menuItems: Array<string> }> = (props: { menuItem
 };
 
 const StyledTabMenu = styled.nav`
-   /* margin-bottom: 40px; */
-   ul {
-       display: flex;
-       /* gap: 20px; */
-       justify-content: space-between; //center
-       max-width: 352px; //max-width: 352px дает эффект резиности отзывчивости
-       width: 100%; 
-       border: 1px solid red;
-       margin: 0 auto 40px;
+    ul {
+        display: flex;
+        justify-content: space-between;
+        max-width: 352px;
+        width: 100%;
+        border: 1px solid red;
+        margin: 0 auto 40px;
     }
 `;
 
-const ListItem = styled.li<ListItemProps>`
-    
-`
+const StyledListItem = styled.li``;
 
-
+export default TabMenu;
 
 
 //map пробежаться по тому массиву который передадут в пропсах 

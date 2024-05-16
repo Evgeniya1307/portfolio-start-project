@@ -1,12 +1,14 @@
-import { thema } from "../styles/Thema"
-import styled from "styled-components"
 
+import { thema } from "../styles/Thema";
+import styled, { css } from "styled-components";
 
 type LinkProps = {
-    href: string; // Добавляем свойство href в тип LinkProps
+    href?: string;
     children: React.ReactNode;
+    onClick?: () => void;
+    as?: string;
+    active?: boolean; // Добавляем проп active
 };
-
 
 export const Link = styled.a<LinkProps>`
     font-weight: 400;
@@ -17,23 +19,26 @@ export const Link = styled.a<LinkProps>`
     position: relative;
     z-index: 0;
     
-&:hover { //при наведии на линки в ворке
-&::before {
-height: 10px;
-}
+    &:hover {
+        &::before {
+            height: 10px;
+        }
     }
 
     &::before {
-       content: "";
-       display: inline-block;
-       background-color: ${thema.colors.accent};
-       
-    
-    position: absolute;
-    bottom: 5px;
-    left:   0px;
-    right:  0px;
-    z-index: -1;
-    }
+        content: "";
+        display: inline-block;
+        background-color: ${thema.colors.accent};
+        position: absolute;
+        bottom: 5px;
+        left: 0px;
+        right: 0px;
+        z-index: -1;
 
-`
+        ${(props) =>
+            props.active &&
+            css`
+             height: 10px ;
+            `}
+    }
+`;

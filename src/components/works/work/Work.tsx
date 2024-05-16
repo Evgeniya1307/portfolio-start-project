@@ -12,14 +12,6 @@ type WorkPropsType ={
 }
 
 
-
-
-//  тип для пропсов компонента ссылки
-type LinkProps = {
-    href: string;
-    children?: React.ReactNode//тип children
-}
-
 export const Work: React.FC<WorkPropsType> = (props:WorkPropsType)=>{
     return(
 <S.Work>
@@ -31,7 +23,7 @@ export const Work: React.FC<WorkPropsType> = (props:WorkPropsType)=>{
 <S.Description>
     <S.Title>{props.title}</S.Title>
 <S.Text>{props.text}</S.Text>
-<Link href = {'#'}>demo</Link>
+<Link active href = {'#'}>demo</Link>
 <Link href ={'#'}>code</Link>
 </S.Description>
 
